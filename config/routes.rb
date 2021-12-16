@@ -10,8 +10,12 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  get "/me", to: "organizations#show"
+  post "/login_employee", to: "employee_sessions#create"
+  delete "/logout_employee", to: "employee_sessions#destroy"
 
+  get "/me", to: "organizations#show"
+  get "/me2", to: "employees#show"
+  
   get "/organization_employees", to: "organizations#employees"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
