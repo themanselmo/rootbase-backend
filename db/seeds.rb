@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts("Seeding organizations...")
-thc = Organization.create(name: "The High Council Farms", password_digest: "1")
+thc = Organization.create(name: "The High Council Farms", password: "1", password_confirmation: "1")
 
 
 puts("Seeding employees...")

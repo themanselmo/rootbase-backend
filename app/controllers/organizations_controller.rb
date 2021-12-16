@@ -23,6 +23,16 @@ class OrganizationsController < ApplicationController
 
     end
 
+    def employees
+        organization = Organization.find_by(id: session[:user_id])
+
+        if organization
+            render json: organization.employees, status: :ok
+        else
+            render json: {error: ["Not found"]}, status: :not_found
+        end
+    end
+
       private
 
     def org_params

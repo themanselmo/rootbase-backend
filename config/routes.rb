@@ -11,5 +11,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
 
   get "/me", to: "organizations#show"
+
+  get "/organization_employees", to: "organizations#employees"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
