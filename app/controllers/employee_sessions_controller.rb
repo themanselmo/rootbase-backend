@@ -5,7 +5,7 @@ class EmployeeSessionsController < ApplicationController
         organization = Organization.find_by(id: session[:user_id])
         employee = organization.employees.find_by(id: params[:id])
 
-        if employee.pin === (params[:pin])
+        if employee[:pin] === (params[:pin])
             session[:employee_id] = employee.id 
             render json: employee, status: :created
         else
