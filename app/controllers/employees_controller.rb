@@ -11,4 +11,24 @@ class EmployeesController < ApplicationController
 
     end
 
+    def create
+        employee = Employee.create(employee_params)
+
+        if employee.valid?
+            render json: employee, status: :created
+        else
+            render json: {error: employee.error}, status: :unprocessable_entity
+        end
+    end
+
+    private
+
+    def employee_params
+        params.permit(
+            :name,
+            :pin,
+            :organization_id
+        )
+    end
+
 end
