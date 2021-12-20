@@ -3,7 +3,6 @@ class TasksController < ApplicationController
     def create 
         task = Task.new(task_params)
         task[:organization_id] = session[:user_id]
-        task[:status] = "incomplete"
 
         task.save
         if task
