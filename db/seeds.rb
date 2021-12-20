@@ -22,13 +22,10 @@ r3 = Garden.create(name: "Flower 1", crop: "Hydrangea", organization_id: thc.id)
 
 puts("Seeding tasks...")
 t1 = Task.create(name: "Wash floors", status: "incomplete", due_date: "2021/12/01", organization_id: thc.id)
-t2 = Task.create(name: "Wash floors", status: "incomplete", due_date: "2021/12/01", organization_id: thc.id)
-t3 = Task.create(name: "Wash floors", status: "incomplete", due_date: "2021/12/01", organization_id: thc.id)
+t2 = Task.create(name: "Foliar Spray Canopy", status: "incomplete", due_date: "2021/12/01", organization_id: thc.id)
+t3 = Task.create(name: "Mix up stock tanks", status: "incomplete", due_date: "2021/12/01", organization_id: thc.id)
 
 
 puts("Seeding employee tasks...")
-et1 = EmployeeTask.create(employee_id: max.id, task_id: t1.id)
-et2 = EmployeeTask.create(employee_id: max.id, task_id: t2.id)
-et3 = EmployeeTask.create(employee_id: max.id, task_id: t3.id)
 
 puts("Seeding garden tasks...")

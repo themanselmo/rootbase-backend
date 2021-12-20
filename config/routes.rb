@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get "/me", to: "organizations#show"
   get "/me2", to: "employees#show"
   
+  get "my_tasks", to: "employee_tasks#my_tasks"
+
   get "/organization_employees", to: "organizations#employees"
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
