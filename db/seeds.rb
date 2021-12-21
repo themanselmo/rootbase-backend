@@ -11,9 +11,9 @@ thc = Organization.create(name: "The High Council Farms", password: "1", passwor
 
 
 puts("Seeding employees...")
-max = Employee.create(name: "Max Anselmo", pin: "1234", organization_id: thc.id)
-adam = Employee.create(name: "Adam La Rosa", pin: "1234", organization_id: thc.id)
-richie = Employee.create(name: "Richie DeDonato", pin: "1234", organization_id: thc.id)
+# max = Employee.create(name: "Max Anselmo", pin: "1234", organization_id: thc.id)
+# adam = Employee.create(name: "Adam La Rosa", pin: "1234", organization_id: thc.id)
+# richie = Employee.create(name: "Richie DeDonato", pin: "1234", organization_id: thc.id)
 
 puts("Seeding gardens...")
 r1 = Garden.create(name: "Veg 1", crop: "Beef Steak Tomato", organization_id: thc.id)

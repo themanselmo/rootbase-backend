@@ -2,13 +2,24 @@ class EmployeesController < ApplicationController
 
     def show
         employee = Employee.find_by(id: session[:employee_id])
-
+        avatar = rails_blob_path(employee.avatar)
+        
         if employee
-            render json: employee, status: :ok
+            render json: {employee: employee, avatar: avatar}, status: :ok
         else
             render json: {error: ["Not found"]}, status: :not_found
         end
 
+    end
+
+    def update 
+
+        employee = Employee.find(params[:id])
+
+        employee.update(avatar: params[:avatar])
+        avatar_url = rails_blob_path(employee.avatar)
+
+        render json: {employee: employee, avatar_url: avatar_url}
     end
 
     def create
@@ -27,7 +38,8 @@ class EmployeesController < ApplicationController
         params.permit(
             :name,
             :pin,
-            :organization_id
+            :organization_id,
+            :avatar
         )
     end
 
