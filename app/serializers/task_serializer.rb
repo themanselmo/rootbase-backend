@@ -3,4 +3,5 @@ class TaskSerializer < ActiveModel::Serializer
   
   has_many :employees 
   has_many :gardens
+  has_many :comments
 end

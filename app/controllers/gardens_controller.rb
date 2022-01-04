@@ -14,6 +14,16 @@ class GardensController < ApplicationController
 
     end
 
+    def show
+        garden = Garden.find_by(id: params[:id])
+
+        if garden 
+            render json: garden, status: :ok
+        else
+            render json: {error: [garden.errors]}, status: :not_found
+        end
+
+    end
 
     private
 

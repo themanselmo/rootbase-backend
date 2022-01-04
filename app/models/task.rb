@@ -4,4 +4,5 @@ class Task < ApplicationRecord
     has_many :garden_tasks
     has_many :employees, through: :employee_tasks
     has_many :gardens, through: :garden_tasks
+    has_many :comments
 end

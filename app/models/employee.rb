@@ -4,4 +4,7 @@ class Employee < ApplicationRecord
     has_many :tasks, through: :employee_tasks
     
     has_one_attached :avatar
+    
+    validates :name, presence: :true 
+    validates :pin, presence: :true
 end
