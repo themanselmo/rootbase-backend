@@ -6,8 +6,11 @@ class EmployeeSessionsController < ApplicationController
         employee = organization.employees.find_by(id: params[:id])
 
         if employee[:pin] === (params[:pin])
-            session[:employee_id] = employee.id 
-            render json: employee, status: :created
+            session[:employee_id] = employee.id
+            
+            avatar_url = rails_blob_path(employee.avatar)
+
+            render json: {employee: employee, avatar_url: avatar_url}, status: :created
         else
             render json: {errors: ["Invalid username or password"]}, status: :unauthorized
         end

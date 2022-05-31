@@ -26,9 +26,11 @@ class EmployeesController < ApplicationController
         employee = Employee.create(employee_params)
 
         if employee.valid?
-            render json: employee, status: :created
+            avatar_url = rails_blob_path(employee.avatar)
+
+            render json: {employee: employee, avatar_url: avatar_url}, status: :created
         else
-            render json: {error: employee.error}, status: :unprocessable_entity
+            render json: {error: [employee.errors]}, status: :unprocessable_entity
         end
     end
 
